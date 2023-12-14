@@ -26,7 +26,7 @@ export const ShowTodo=()=>{
          style={{margin:'20px'}}>
            {
             filteredData.map((todo:Todo)=>{
-              return <List.Item id={todo.id} style={{padding:'10px'}}>
+              return <List.Item id={todo.id} style={{padding:'10px', margin:'5px'}}>
                   <Checkbox onChange={()=>handleToggleChecked(todo.id)} id={todo.id} checked={todo.completed}/>
                    <label htmlFor={todo.id} > <Text style={{fontSize:'18px'}} delete={todo.completed}>{todo.content}</Text></label>
                    <div>
@@ -34,7 +34,7 @@ export const ShowTodo=()=>{
                       todo.completed && 
                       <Button
                       icon={<DeleteOutlined />}
-                      style={{color:'red'}} size="small" type="link" onClick={()=> handleDeleteTodo(todo.id)}/>
+                      style={{color:'red'}} size="small" onClick={()=> handleDeleteTodo(todo.id)}/>
                    } 
                    </div>
               </List.Item>
